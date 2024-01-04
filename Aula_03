@@ -1,0 +1,65 @@
+--Where Statement
+--=, <>, <, >, And, Or, Like, Null, Not Null, In
+
+-- = compara os valores da coluna com o parametro utilizado são iguais
+SELECT *
+FROM SQL_Tutorial.dbo.EmployeeDemographics
+WHERE FirstName = 'Jim'
+
+-- <> compara os valores da coluna com o parametro utilizado são diferentes
+SELECT *
+FROM SQL_Tutorial.dbo.EmployeeDemographics
+WHERE FirstName <> 'Jim'
+
+-- > compara o valor da coluna é maior que 31
+SELECT *
+FROM SQL_Tutorial.dbo.EmployeeDemographics
+WHERE Age > 31
+
+-- < compara o valor da coluna é menor que 31
+SELECT *
+FROM SQL_Tutorial.dbo.EmployeeDemographics
+WHERE Age < 31
+
+-- <= compara o valor da coluna é menor ou igual a 31
+SELECT *
+FROM SQL_Tutorial.dbo.EmployeeDemographics
+WHERE Age <= 31
+
+-- AND adiciona mais um filtro para o SELECT, obrigando ao resultado obedecer ambas as hipoteses
+SELECT *
+FROM SQL_Tutorial.dbo.EmployeeDemographics
+WHERE Age <= 32 AND Gender = 'Male'
+
+-- OR adiciona mais um filtro para o SELECT, obrigando ao resultado obedecer alguma das hipoteses
+SELECT *
+FROM SQL_Tutorial.dbo.EmployeeDemographics
+WHERE Age <= 32 OR Gender = 'Female'
+
+-- LIKE é um filtro avançado ("Ctrl + F"), perimitindo buscar por caracteres e até numeros específicos presente nos valores da tabela.
+SELECT *
+FROM SQL_Tutorial.dbo.EmployeeDemographics
+WHERE LastName LIKE 'S%' -- Começa com S
+
+SELECT *
+FROM SQL_Tutorial.dbo.EmployeeDemographics
+WHERE LastName LIKE '%S' -- Termina com S
+
+SELECT *
+FROM SQL_Tutorial.dbo.EmployeeDemographics
+WHERE LastName LIKE '%S%' --Tem S em qualquer lugar
+
+-- is Null compara o valor apresentando somente os valores nulos (vazios)
+SELECT *
+FROM SQL_Tutorial.dbo.EmployeeDemographics
+WHERE FirstName is Null
+
+-- is Not Null compara o valor apresentando somente os valores NÃO nulos (vazios)
+SELECT *
+FROM SQL_Tutorial.dbo.EmployeeDemographics
+WHERE FirstName is Not Null
+
+-- IN é uma especie de comparação (= statement) com listas de parametros (salva tempo);
+SELECT *
+FROM SQL_Tutorial.dbo.EmployeeDemographics
+WHERE FirstName in ('Jim','Michael') 
