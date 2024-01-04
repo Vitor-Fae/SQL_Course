@@ -1,0 +1,41 @@
+-- SELECT Statement
+-- *,Top, Distinct, Count, As, Max, Min, Avg
+
+-- Select é uma função que permite mostrar os dados de uma tabela, ao utilizar o "*" todos os dados de todas as colunas aparecem como resultado
+SELECT *
+FROM EmployeeDemographics
+
+-- Também é possível selecionar quais colunas você quer como resultado
+SELECT FirstName, LastName
+FROM EmployeeDemographics
+
+-- Com o TOP X é possível ver os primeiros 5 valores de cada coluna selecionada, serve para tabelas com muitas linhas
+SELECT TOP 5 *
+FROM EmployeeDemographics
+
+-- DISTINCT é utilizado para mostrar todos os valores distintos na coluna selecionada
+SELECT DISTINCT (EmployeeID)
+FROM EmployeeDemographics
+
+SELECT DISTINCT (Gender)
+FROM EmployeeDemographics
+
+-- COUNT serve para contar quantas linhas tem em determinada coluna // AS serve para renomear a coluna dos resultados
+SELECT COUNT (LastName) AS LastNameCount
+FROM EmployeeDemographics
+
+-- Max retorna o valor máximo encontrado na coluna escolhida
+SELECT Max (Salary)
+FROM EmployeeSalary
+
+-- Min retorna o valor mínimo encontrado na coluna escolhida
+SELECT Min (Salary)
+FROM EmployeeSalary
+
+-- Avg retorna o valor médio encontrado na coluna escolhida
+SELECT Avg (Salary)
+FROM EmployeeSalary
+
+-- Para escolher a tabela certa independente do banco de dados que voce esta utilizando basta usar FROM BancoDeDados.PrefixoTabela.NomeDaTabela
+SELECT Max (Salary)
+FROM SQL_Tutorial.dbo.EmployeeSalary
