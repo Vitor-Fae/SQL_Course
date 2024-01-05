@@ -1,0 +1,34 @@
+-- Group by, Order By
+
+SELECT *
+FROM EmployeeDemographics
+
+SELECT Gender, Age, COUNT(Gender) AS 'Numero de Participantes'
+FROM EmployeeDemographics
+GROUP BY Gender, Age
+
+SELECT Gender, COUNT(Gender) AS 'Numero de Participantes'
+FROM EmployeeDemographics
+WHERE Age > 31
+GROUP BY Gender
+
+SELECT Gender, COUNT(Gender) AS 'Numero de Participantes'
+FROM EmployeeDemographics
+WHERE Age > 31
+GROUP BY Gender
+ORDER BY COUNT(Gender) DESC -- numero de participantes, do maior pro menor, ASC é o oposto de DESC
+
+SELECT Gender, COUNT(Gender) AS 'Numero de Participantes'
+FROM EmployeeDemographics
+WHERE Age > 31
+GROUP BY Gender
+ORDER BY Gender DESC --Agora é por ordem alfabética
+
+SELECT *
+FROM EmployeeDemographics
+ORDER BY Age, Gender -- Primeiro a ordem de idade e em caso de idades iguais entra a ordem alfabética do genero da pessoa
+-- é possível aplicar ASC e DESC em cada um dos parametros de ORDER BY
+
+SELECT *
+FROM EmployeeDemographics
+ORDER BY 4, 5 -- O numero da coluna pode subistituir o nome dela na hora de consultar o BD
